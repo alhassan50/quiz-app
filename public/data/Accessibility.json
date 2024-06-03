@@ -1,0 +1,53 @@
+[
+    {
+      "question": "What is web accessibility?",
+      "possible_answers": ["Designing websites that can be used by people with disabilities", "Creating web pages that are attractive", "Ensuring websites load quickly", "Optimizing websites for search engines"],
+      "answer": "Designing websites that can be used by people with disabilities"
+    },
+    {
+      "question": "What does WCAG stand for?",
+      "possible_answers": ["Web Content Accessibility Guidelines", "World Content Accessibility Guide", "Web Content Access Guide", "World Content and Accessibility Guidelines"],
+      "answer": "Web Content Accessibility Guidelines"
+    },
+    {
+      "question": "Which HTML attribute is used to provide alternative text for images?",
+      "possible_answers": ["alt", "src", "title", "longdesc"],
+      "answer": "alt"
+    },
+    {
+      "question": "What is a common tool used for screen readers?",
+      "possible_answers": ["JAWS", "Mouse", "Trackpad", "Monitor"],
+      "answer": "JAWS"
+    },
+    {
+      "question": "What is the purpose of ARIA (Accessible Rich Internet Applications)?",
+      "possible_answers": ["To make web content and web applications more accessible to people with disabilities", "To improve website performance", "To enhance website security", "To increase web traffic"],
+      "answer": "To make web content and web applications more accessible to people with disabilities"
+    },
+    {
+      "question": "Which HTML element is used to define navigation links?",
+      "possible_answers": ["<nav>", "<footer>", "<header>", "<section>"],
+      "answer": "<nav>"
+    },
+    {
+      "question": "How can you improve keyboard navigation on a website?",
+      "possible_answers": ["Use tabindex attribute", "Use large images", "Use complex forms", "Use small text"],
+      "answer": "Use tabindex attribute"
+    },
+    {
+      "question": "Which CSS property can help improve accessibility by controlling the visibility of an element?",
+      "possible_answers": ["visibility", "color", "font-size", "position"],
+      "answer": "visibility"
+    },
+    {
+      "question": "What is the purpose of a 'skip to content' link?",
+      "possible_answers": ["To allow users to bypass navigation and go straight to the main content", "To provide a link to external resources", "To enhance the website's SEO", "To add decorative elements to a webpage"],
+      "answer": "To allow users to bypass navigation and go straight to the main content"
+    },
+    {
+      "question": "Which ARIA role is used to define a banner landmark?",
+      "possible_answers": ["banner", "main", "contentinfo", "navigation"],
+      "answer": "banner"
+    }
+]
+  

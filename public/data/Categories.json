@@ -1,0 +1,23 @@
+[
+    {
+      "title": "HTML",
+      "icon": "/assets/html.svg",
+      "color": "#FF7E35"
+    },
+    {
+      "title": "CSS",
+      "icon": "/assets/css.svg",
+      "color": "#2FD887"
+    },
+    {
+      "title": "JavaScript",
+      "icon": "/assets/js.svg",
+      "color": "#306AFF"
+    },
+    {
+      "title": "Accessibility",
+      "icon": "/assets/accessibility.svg",
+      "color": "#A729F5"
+    }
+  ]
+  

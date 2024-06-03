@@ -1,0 +1,53 @@
+[
+    {
+      "question": "What does HTML stand for?",
+      "possible_answers": ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language"],
+      "answer": "Hyper Text Markup Language"
+    },
+    {
+      "question": "What is the correct HTML element for the largest heading?",
+      "possible_answers": ["<h1>", "<h6>", "<head>", "<heading>"],
+      "answer": "<h1>"
+    },
+    {
+      "question": "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+      "possible_answers": ["alt", "src", "title", "longdesc"],
+      "answer": "alt"
+    },
+    {
+      "question": "How can you create an ordered list?",
+      "possible_answers": ["<ol>", "<ul>", "<list>", "<dl>"],
+      "answer": "<ol>"
+    },
+    {
+      "question": "What is the correct HTML element for inserting a line break?",
+      "possible_answers": ["<br>", "<break>", "<lb>", "<hr>"],
+      "answer": "<br>"
+    },
+    {
+      "question": "Which HTML element is used to define important text?",
+      "possible_answers": ["<strong>", "<i>", "<b>", "<important>"],
+      "answer": "<strong>"
+    },
+    {
+      "question": "Which HTML element is used to define emphasized text?",
+      "possible_answers": ["<em>", "<i>", "<italic>", "<emphasized>"],
+      "answer": "<em>"
+    },
+    {
+      "question": "Which character is used to indicate an end tag?",
+      "possible_answers": ["</>", "<>", "</", "<!>"],
+      "answer": "</>"
+    },
+    {
+      "question": "How can you make a numbered list?",
+      "possible_answers": ["<ol>", "<ul>", "<dl>", "<list>"],
+      "answer": "<ol>"
+    },
+    {
+      "question": "How can you make a bulleted list?",
+      "possible_answers": ["<ul>", "<ol>", "<dl>", "<list>"],
+      "answer": "<ul>"
+    }
+  ]
+  
