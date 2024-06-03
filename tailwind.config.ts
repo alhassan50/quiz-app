@@ -8,9 +8,7 @@ export default {
     extend: {
       colors: {
         primaryPurple: '#A729F5',
-      },
-      fontFamily: {
-        rubik:["Rubik", "Nunito"]
+        darkNavy: "#313E51"
       },
     },
   },

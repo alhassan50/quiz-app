@@ -2,22 +2,22 @@
     {
       "title": "HTML",
       "icon": "/assets/html.svg",
-      "color": "#FF7E35"
+      "color": "#FFF1E9"
     },
     {
       "title": "CSS",
       "icon": "/assets/css.svg",
-      "color": "#2FD887"
+      "color": "#E0FDEF"
     },
     {
       "title": "JavaScript",
       "icon": "/assets/js.svg",
-      "color": "#306AFF"
+      "color": "#EBF0FF"
     },
     {
       "title": "Accessibility",
       "icon": "/assets/accessibility.svg",
-      "color": "#A729F5"
+      "color": "#F6E7FF"
     }
 ]
   

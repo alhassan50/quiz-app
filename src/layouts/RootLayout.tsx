@@ -8,7 +8,7 @@ export default function RootLayout() {
     <>
         <ScrollRestoration />
         <Header />
-        <main>
+        <main className='px-[24px]'>
             <Outlet />
         </main>
     </>
