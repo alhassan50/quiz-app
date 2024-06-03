@@ -7,7 +7,7 @@ export default function Home() {
       <div  className="grid gap-10">
         <div className="grid gap-4">
           <h1 className="text-[40px] font-bold">
-            <span className="font-normal">Welcome to the </span>
+            <span className="font-light">Welcome to the </span>
             <br />
             Frontend Quiz!
           </h1>

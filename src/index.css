@@ -12,7 +12,7 @@
   
 /* Dark theme variables */
 :root[data-theme='dark'] {
-    --background-color: #333;
+    --background-color: #313E51;
     --card-background-color: #3B4D66;
     --text-color: #EDF1F9;
 }
