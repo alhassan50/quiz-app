@@ -10,6 +10,7 @@ export default function ColorTheme({theme, toggleTheme}: {theme: string, toggleT
         </figure>
 
         <button
+            title="toggler"
             onClick={toggleTheme}
             className="w-[32px] h-[20px] sm:w-[48px] sm:h-[28px] relative rounded-[20px] bg-primaryPurple"
         >
