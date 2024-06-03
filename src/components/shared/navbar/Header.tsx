@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <header className="py-[26px]">
-        <div className="flex justify-between items-center gap-4 px-[24px]">
+        <div className="flex justify-between items-center gap-4 max-w-[1440px] mx-auto px-[3.2%] sm:px-[5%]">
             <figure></figure>
 
             <ColorTheme 

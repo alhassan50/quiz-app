@@ -8,7 +8,8 @@ export default function RootLayout() {
     <>
         <ScrollRestoration />
         <Header />
-        <main className='px-[24px]'>
+        <main className='max-w-[1440px] mx-auto px-[3.2%] sm:px-[5%]'>
+            <div className='bg bg-Ima'></div>
             <Outlet />
         </main>
     </>
