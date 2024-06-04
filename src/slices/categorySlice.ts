@@ -1,23 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+type Category = {
+    title: string;
+    icon: string;
+    color: string;
+}
+
+const initialState: Category | null = null
 
 const categorySlice = createSlice({
     name: "category",
-    initialState: {
-        title: null
-    },
+    initialState,
     reducers: {
         selectCategory: {
-            prepare(title) {
-                return title
+            prepare(category: Category) {
+                return { payload: category };
             },
-            reducer(state, action) {
-                state.title = action.payload
+            reducer(state: Category | null, action: PayloadAction<Category>) {
+                return action.payload
             }
         }
     }
 })
 
-export const getSelectedCategory = (state: { category: {title: null | string} }) => state.category.title;
+export const getSelectedCategory = (state: { category: Category }) => state.category;
 
 export const {selectCategory} = categorySlice.actions
 
