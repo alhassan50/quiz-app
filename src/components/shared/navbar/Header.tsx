@@ -1,49 +1,56 @@
 import { useState, useEffect } from "react"
+import { useLocation } from "react-router-dom";
 
 //components
 import ColorTheme from "./ColorTheme";
 
 //utils
 import getSystemTheme from "../../../lib/getSystenTheme";
+import getCategory from "../../../lib/getCategory";
 
-//redux
-import { useSelector } from "react-redux";
-import { getSelectedCategory } from "../../../slices/categorySlice";
 
 export default function Header() {
-  const selectedCategory = useSelector(getSelectedCategory)
+  const location = useLocation()
+  const path = location.pathname
 
-    const [theme, setTheme] = useState(() => {
-        const storedTheme = localStorage.getItem('quizAppTheme');
-        return storedTheme ? storedTheme : getSystemTheme();
-    })
+  //get quiz selected category
+  const selectedCategory = getCategory(path)
 
-    const toggleTheme = () => {
-        setTheme(prevTheme => {
-            const newTheme = prevTheme === 'light' ? 'dark' : 'light'
-            localStorage.setItem('quizAppTheme', newTheme);
-            return newTheme
-        })
-    }
+  //init theme from from local storage or operating system
+  const [theme, setTheme] = useState(() => {
+      const storedTheme = localStorage.getItem('quizAppTheme');
+      return storedTheme ? storedTheme : getSystemTheme();
+  })
 
-    useEffect(() => {
-        const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-          if (!localStorage.getItem('theme')) {
-            setTheme(e.matches ? 'dark' : 'light');
-          }
-        };
-    
-        const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        darkMediaQuery.addEventListener('change', handleSystemThemeChange);
-    
-        return () => {
-          darkMediaQuery.removeEventListener('change', handleSystemThemeChange);
-        };
-    }, []);
-    
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-    }, [theme]);
+  //stores website preffered theme in local storage
+  const toggleTheme = () => {
+      setTheme(prevTheme => {
+          const newTheme = prevTheme === 'light' ? 'dark' : 'light'
+          localStorage.setItem('quizAppTheme', newTheme);
+          return newTheme
+      })
+  }
+
+  //listen for change in operating system theme
+  useEffect(() => {
+      const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+        if (!localStorage.getItem('theme')) {
+          setTheme(e.matches ? 'dark' : 'light');
+        }
+      };
+  
+      const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      darkMediaQuery.addEventListener('change', handleSystemThemeChange);
+  
+      return () => {
+        darkMediaQuery.removeEventListener('change', handleSystemThemeChange);
+      };
+  }, []);
+  
+  //adds preffered theme as attribute to document
+  useEffect(() => {
+      document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   return (
     <header className="py-[26px]">
