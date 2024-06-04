@@ -3,14 +3,7 @@ import { Link } from "react-router-dom"
 //utils
 import getCategories from "../../lib/getCategories"
 
-//redux
-import { useDispatch } from "react-redux"
-
-//actions
-import { selectCategory } from "../../slices/categorySlice"
-
 export default function Categories() {
-    const dispatch = useDispatch()
 
     const categories = getCategories()
 
@@ -22,7 +15,6 @@ export default function Categories() {
                         <li 
                             key={category.title}
                             className="hover:-translate-y-1 transition-all duration-500"
-                            onClick={() => dispatch(selectCategory(category))}
                         >
                             <Link to={`/${category.title}`} >
                                 <div className="flex gap-4 sm:gap-8 items-center p-3  sm:p-4 md:p-5 category-card rounded-[12px]">
