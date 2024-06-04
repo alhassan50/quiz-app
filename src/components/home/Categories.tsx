@@ -10,7 +10,7 @@ export default function Categories() {
                 categories.map(category => (
                     <li 
                         key={category.title}
-                        className=""
+                        className="hover:-translate-y-1 transition-all duration-500"
                     >
                         <Link to={`/${category.title}`} className="flex gap-4 sm:gap-8 items-center p-3  sm:p-4 md:p-5 category-card rounded-[12px]">
                             <figure 
@@ -31,6 +31,9 @@ export default function Categories() {
                 ))
             }
         </ul>
+        {/* <button className="p-3 sm:p-4 md:p-[32px] mt-[32px] bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px]">
+            Start Quiz
+        </button> */}
     </div>
   )
 }
