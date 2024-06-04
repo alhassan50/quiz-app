@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Grid>
       <div className="flex flex-col gap-4">
-        <h1 className="text-[40px] sm:text-[64px] font-bold">
+        <h1 className="text-[40px] sm:text-[52px] md:text-[58px] lg:text-[64px] font-bold">
           <span className="font-light">Welcome to the </span>
           <br />
           Frontend Quiz!
