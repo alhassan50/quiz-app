@@ -1,5 +1,4 @@
-import categories from '../../public/data/Categories.json'
-
-export default function getCategories() {
-    return categories
+export default async function getCategories() {
+    const response = await fetch('/data/Categories.json')
+    return await response.json()
 }
