@@ -1,20 +1,47 @@
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Await, useLocation } from "react-router-dom";
 import fetchQuiz from "../../lib/fetchQuiz";
 import Grid from "../../components/shared/Grid";
 
+type Answer = {
+  tag: string,
+  title: string
+}
+
 type Qestion = {
   question: string,
-  possible_answers: string[],
-  answer: string
+  possibleAnswers: Answer[],
+  correctAnswer: Answer
 }
 
 export default function Quiz() {
-  const [questionStep, setQuestionStep] = useState(0)
+  const [questionStep, setQuestionStep] = useState<number>(0)
+  const [quizScore, setQuizScore] = useState<number>(0)
+  const [selectedAnswer, setSelectedAnswer] = useState<Answer | null>(null)
+  const [isAnswerSubmitted, setIsAnswerSubmitted] = useState<boolean>(false)
   const location = useLocation()
   
   const path = location.pathname
   const quizPromise = fetchQuiz(path)
+
+  const increaseQuizScore = () => {
+    setQuizScore(prevScore => prevScore + 1)
+  }
+
+  const handleAnswerSelection = (question: Qestion, selectedAnswer: Answer) => {
+    console.log(selectedAnswer)
+    setSelectedAnswer(selectedAnswer)
+    /* const correctAnswer = question.correctAnswer.title
+    if (correctAnswer === answerSelected.title)  increaseQuizScore() */
+  }
+  
+  const submitAnswer = () => {
+    setIsAnswerSubmitted(true)
+  }
+
+  useEffect(() => {
+    console.log("quizScore:::", quizScore)
+  }, [quizScore])
   
   return (
     <Suspense fallback={<h1>loading...</h1>}>
@@ -23,9 +50,9 @@ export default function Quiz() {
           <ul>
             {quizData.map((question: Qestion, index: number) => (
               questionStep === index &&
-              <li key={question.question}>
+              <li key={question.question} >
                 <Grid>
-                  <div className="flex flex-col gap-6">
+                  <section className="flex flex-col gap-6 lg:gap-[160px]">
                     <div className="flex flex-col gap-4">
                       <p className="text-sm sm:text-xl italic text-[#ABC1E1]">
                         Question {questionStep + 1} of {quizData.length}
@@ -37,17 +64,53 @@ export default function Quiz() {
                     </div>
 
                     {/* progress tracker */}
-                    <div className="w-full p-1 bg-[#3B4D66] rounded-[50px]">
-                      <div className={`h-2 bg-primaryPurple rounded-[50px] w-[${((index+1)/quizData.length)*100}%]`}></div>
+                    <div className="progress_tracker w-full p-1 rounded-[50px]">
+                      <div className={`h-2 bg-primaryPurple rounded-[50px] w-[${((index+1)/quizData.length)*100}%)]`}></div>
                     </div>
-                  </div>
-                  <ul>
-                    {question.possible_answers.map(possible_answer => (
-                      <li key={possible_answer}>
-                        {possible_answer}
-                      </li>
-                    ))}
-                  </ul>
+                  </section>
+
+                  <section>
+                    <ul className="grid gap-3 sm:gap-4 md:gap-6">
+                      {question.possibleAnswers.map(possibleAnswer => (
+                        <li 
+                          key={possibleAnswer.title} 
+                          onClick={() => handleAnswerSelection(question, possibleAnswer)}
+                        >
+                          <div 
+                            className={`answer-card group border ${selectedAnswer?.title === possibleAnswer.title ? 'border-primaryPurple' : 'border-[var(--card-background-color)]'} cursor-pointer flex gap-4 sm:gap-8 items-center p-3  sm:p-4 md:p-5 rounded-[12px] transition-all duration-300`}
+                          >
+                            <div 
+                              className={`p-2 w-10 h-10 bg-[#F4F6FA] sm:w-[48px] sm:h-[48px] md:w-[56px] md:h-[56px] rounded-[6px] flex justify-center items-center ${selectedAnswer?.title === possibleAnswer.title && 'bg-primaryPurple'}`}
+                            >
+                              <h3 className={`text-lg group-hover:text-primaryPurple ${selectedAnswer?.title === possibleAnswer.title && 'text-white group-hover:text-white'} sm:text-[24px] md:text-[28px]  text-[#626C7F] font-medium`}>{possibleAnswer.tag}</h3>
+                            </div>
+                            <h3 className="text-lg sm:text-[24px] md:text-[28px] font-medium">
+                              {possibleAnswer.title}
+                            </h3>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                    <div>
+                      {
+                        isAnswerSubmitted ?
+                          <button 
+                            type="button"
+                            className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300"
+                          >
+                            Next Question
+                          </button>
+                        :
+                          <button 
+                            type="button"
+                            className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300"
+                            onClick={submitAnswer}
+                          >
+                            Submit Answer
+                          </button>
+                      }
+                    </div>
+                  </section>
                 </Grid>
               </li>
             ))}

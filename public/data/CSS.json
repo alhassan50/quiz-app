@@ -1,53 +1,102 @@
 [
-    {
-      "question": "What does CSS stand for?",
-      "possible_answers": ["Cascading Style Sheets", "Colorful Style Sheets", "Creative Style Sheets", "Computer Style Sheets"],
-      "answer": "Cascading Style Sheets"
-    },
-    {
-      "question": "Where in an HTML document is the correct place to refer to an external style sheet?",
-      "possible_answers": ["In the <head> section", "At the end of the document", "In the <body> section", "After the closing </html> tag"],
-      "answer": "In the <head> section"
-    },
-    {
-      "question": "Which HTML tag is used to define an internal style sheet?",
-      "possible_answers": ["<style>", "<css>", "<script>", "<link>"],
-      "answer": "<style>"
-    },
-    {
-      "question": "Which property is used to change the background color?",
-      "possible_answers": ["background-color", "color", "bgcolor", "background"],
-      "answer": "background-color"
-    },
-    {
-      "question": "Which CSS property is used to change the text color of an element?",
-      "possible_answers": ["color", "text-color", "font-color", "fgcolor"],
-      "answer": "color"
-    },
-    {
-      "question": "Which property is used to change the font of an element?",
-      "possible_answers": ["font-family", "font-style", "font-weight", "font"],
-      "answer": "font-family"
-    },
-    {
-      "question": "How do you make the text bold?",
-      "possible_answers": ["font-weight: bold;", "font: bold;", "font-style: bold;", "text-weight: bold;"],
-      "answer": "font-weight: bold;"
-    },
-    {
-      "question": "How do you make each word in a text start with a capital letter?",
-      "possible_answers": ["text-transform: capitalize;", "text-transform: uppercase;", "text-transform: lowercase;", "text-transform: none;"],
-      "answer": "text-transform: capitalize;"
-    },
-    {
-      "question": "Which property is used to change the left margin of an element?",
-      "possible_answers": ["margin-left", "padding-left", "indent", "margin"],
-      "answer": "margin-left"
-    },
-    {
-      "question": "Which CSS property controls the text size?",
-      "possible_answers": ["font-size", "text-size", "font-style", "text-style"],
-      "answer": "font-size"
-    }
+  {
+    "question": "What does CSS stand for?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "Colorful Style Sheets" },
+      { "tag": "B", "title": "Cascading Style Sheets" },
+      { "tag": "C", "title": "Creative Style Sheets" },
+      { "tag": "D", "title": "Computer Style Sheets" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "Cascading Style Sheets" }
+  },
+  {
+    "question": "Where in an HTML document is the correct place to refer to an external style sheet?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "In the <head> section" },
+      { "tag": "B", "title": "At the end of the document" },
+      { "tag": "C", "title": "In the <body> section" },
+      { "tag": "D", "title": "After the closing </html> tag" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "In the <head> section" }
+  },
+  {
+    "question": "Which HTML tag is used to define an internal style sheet?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<style>" },
+      { "tag": "B", "title": "<css>" },
+      { "tag": "C", "title": "<script>" },
+      { "tag": "D", "title": "<link>" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "<style>" }
+  },
+  {
+    "question": "Which property is used to change the background color?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "color" },
+      { "tag": "B", "title": "background-color" },
+      { "tag": "C", "title": "bgcolor" },
+      { "tag": "D", "title": "background" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "background-color" }
+  },
+  {
+    "question": "Which CSS property is used to change the text color of an element?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "color" },
+      { "tag": "B", "title": "text-color" },
+      { "tag": "C", "title": "font-color" },
+      { "tag": "D", "title": "fgcolor" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "color" }
+  },
+  {
+    "question": "Which property is used to change the font of an element?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "font-family" },
+      { "tag": "B", "title": "font-style" },
+      { "tag": "C", "title": "font-weight" },
+      { "tag": "D", "title": "font" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "font-family" }
+  },
+  {
+    "question": "How do you make the text bold?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "font-weight: bold;" },
+      { "tag": "B", "title": "font: bold;" },
+      { "tag": "C", "title": "font-style: bold;" },
+      { "tag": "D", "title": "text-weight: bold;" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "font-weight: bold;" }
+  },
+  {
+    "question": "How do you make each word in a text start with a capital letter?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "text-transform: uppercase;" },
+      { "tag": "B", "title": "text-transform: capitalize;" },
+      { "tag": "C", "title": "text-transform: lowercase;" },
+      { "tag": "D", "title": "text-transform: none;" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "text-transform: capitalize;" }
+  },
+  {
+    "question": "Which property is used to change the left margin of an element?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "margin-left" },
+      { "tag": "B", "title": "padding-left" },
+      { "tag": "C", "title": "indent" },
+      { "tag": "D", "title": "margin" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "margin-left" }
+  },
+  {
+    "question": "Which CSS property controls the text size?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "text-size" },
+      { "tag": "B", "title": "font-size" },
+      { "tag": "C", "title": "font-style" },
+      { "tag": "D", "title": "text-style" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "font-size" }
+  }
 ]
-  
