@@ -29,7 +29,7 @@ export default function Quiz() {
     setQuizScore(prevScore => prevScore + 1)
   }
 
-  const handleAnswerSelection = (question: Question, selectedAnswer: Answer) => {
+  const handleAnswerSelection = (selectedAnswer: Answer) => {
     console.log(selectedAnswer)
     setSelectedAnswer(selectedAnswer)
   }
@@ -88,8 +88,8 @@ export default function Quiz() {
                           className={`${isAnswerSubmitted ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                           >
                           <div 
-                            onClick={() => handleAnswerSelection(question, possibleAnswer)}
-                            className={`answer-card group border ${selectedAnswer?.title === possibleAnswer.title ? 'border-primaryPurple' : 'border-[var(--card-background-color)]'} flex gap-4 sm:gap-8 items-center p-3  sm:p-4 md:p-5 rounded-[12px] ${isAnswerSubmitted ? 'pointer-events-none' : 'cursor-pointer'}
+                            onClick={() => handleAnswerSelection(possibleAnswer)}
+                            className={`answer-card group border ${selectedAnswer?.title === possibleAnswer.title ? 'border-primaryPurple' : 'border-[var(--card-background-color)]'} grid grid-cols-[60px,1fr,40px] gap-4 sm:gap-8 items-center p-3  sm:p-4 md:p-5 rounded-[12px] ${isAnswerSubmitted ? 'pointer-events-none' : 'cursor-pointer'}
                             ${isAnswerSubmitted ? (possibleAnswer.title === selectedAnswer?.title) ? isAnswerCorrect ? 'border-[#26D782]' : 'border-[#EE5454]' : '' : ''}
                             transition-all duration-300`}
                           >
@@ -102,6 +102,15 @@ export default function Quiz() {
                             <h3 className="text-lg sm:text-[24px] md:text-[28px] font-medium">
                               {possibleAnswer.title}
                             </h3>
+
+                            <figure className="content-end">
+                              {
+                                <img
+                                  src={`${possibleAnswer.title === question.correctAnswer.title ? '/assets/correct.svg' : '/assets/wrong.svg'}`}
+                                  alt=""
+                                />
+                              }
+                            </figure>
                           </div>
                         </li>
                       ))}
