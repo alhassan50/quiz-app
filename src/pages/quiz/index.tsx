@@ -19,6 +19,7 @@ export default function Quiz() {
   const [quizScore, setQuizScore] = useState<number>(0)
   const [selectedAnswer, setSelectedAnswer] = useState<Answer | null>(null)
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState<boolean>(false)
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null)
   const location = useLocation()
   
   const path = location.pathname
@@ -35,7 +36,10 @@ export default function Quiz() {
   
   const submitAnswer = (question: Question) => {
     const correctAnswer = question.correctAnswer.title
-    if (correctAnswer === selectedAnswer?.title)  increaseQuizScore()
+    if (correctAnswer === selectedAnswer?.title)  {
+      increaseQuizScore()
+      setIsAnswerCorrect(true)
+    } else setIsAnswerCorrect(false)
     setIsAnswerSubmitted(true)
   }
   
@@ -43,6 +47,7 @@ export default function Quiz() {
     setQuestionStep(prevStep => prevStep + 1)
     setSelectedAnswer(null)
     setIsAnswerSubmitted(false)
+    setIsAnswerCorrect(null)
   }
 
   useEffect(() => {
@@ -84,10 +89,13 @@ export default function Quiz() {
                           >
                           <div 
                             onClick={() => handleAnswerSelection(question, possibleAnswer)}
-                            className={`answer-card group border ${selectedAnswer?.title === possibleAnswer.title ? 'border-primaryPurple' : 'border-[var(--card-background-color)]'} flex gap-4 sm:gap-8 items-center p-3  sm:p-4 md:p-5 rounded-[12px] ${isAnswerSubmitted ? 'pointer-events-none' : 'cursor-pointer'} transition-all duration-300`}
+                            className={`answer-card group border ${selectedAnswer?.title === possibleAnswer.title ? 'border-primaryPurple' : 'border-[var(--card-background-color)]'} flex gap-4 sm:gap-8 items-center p-3  sm:p-4 md:p-5 rounded-[12px] ${isAnswerSubmitted ? 'pointer-events-none' : 'cursor-pointer'}
+                            ${isAnswerSubmitted ? (possibleAnswer.title === selectedAnswer?.title) ? isAnswerCorrect ? 'border-[#26D782]' : 'border-[#EE5454]' : '' : ''}
+                            transition-all duration-300`}
                           >
                             <div 
-                              className={`p-2 w-10 h-10 bg-[#F4F6FA] sm:w-[48px] sm:h-[48px] md:w-[56px] md:h-[56px] rounded-[6px] flex justify-center items-center ${selectedAnswer?.title === possibleAnswer.title && 'bg-primaryPurple'}`}
+                              className={`p-2 w-10 h-10 bg-[#F4F6FA] sm:w-[48px] sm:h-[48px] md:w-[56px] md:h-[56px] rounded-[6px] flex justify-center items-center ${selectedAnswer?.title === possibleAnswer.title && 'bg-primaryPurple'} 
+                              ${isAnswerSubmitted ? (possibleAnswer.title === selectedAnswer?.title) ? isAnswerCorrect ? 'bg-[#26D782]' : 'bg-[#EE5454]' : '' : ''}`}
                             >
                               <h3 className={`text-lg group-hover:text-primaryPurple ${selectedAnswer?.title === possibleAnswer.title && 'text-white group-hover:text-white'} sm:text-[24px] md:text-[28px]  text-[#626C7F] font-medium`}>{possibleAnswer.tag}</h3>
                             </div>
