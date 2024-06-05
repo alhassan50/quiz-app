@@ -8,7 +8,7 @@ type Answer = {
   title: string
 }
 
-type Qestion = {
+type Question = {
   question: string,
   possibleAnswers: Answer[],
   correctAnswer: Answer
@@ -28,15 +28,21 @@ export default function Quiz() {
     setQuizScore(prevScore => prevScore + 1)
   }
 
-  const handleAnswerSelection = (question: Qestion, selectedAnswer: Answer) => {
+  const handleAnswerSelection = (question: Question, selectedAnswer: Answer) => {
     console.log(selectedAnswer)
     setSelectedAnswer(selectedAnswer)
-    /* const correctAnswer = question.correctAnswer.title
-    if (correctAnswer === answerSelected.title)  increaseQuizScore() */
   }
   
-  const submitAnswer = () => {
+  const submitAnswer = (question: Question) => {
+    const correctAnswer = question.correctAnswer.title
+    if (correctAnswer === selectedAnswer?.title)  increaseQuizScore()
     setIsAnswerSubmitted(true)
+  }
+  
+  const goToNextQuestion = () => {
+    setQuestionStep(prevStep => prevStep + 1)
+    setSelectedAnswer(null)
+    setIsAnswerSubmitted(false)
   }
 
   useEffect(() => {
@@ -48,7 +54,7 @@ export default function Quiz() {
       <Await resolve={quizPromise}>
         {(quizData) => (
           <ul>
-            {quizData.map((question: Qestion, index: number) => (
+            {quizData.map((question: Question, index: number) => (
               questionStep === index &&
               <li key={question.question} >
                 <Grid>
@@ -74,10 +80,11 @@ export default function Quiz() {
                       {question.possibleAnswers.map(possibleAnswer => (
                         <li 
                           key={possibleAnswer.title} 
-                          onClick={() => handleAnswerSelection(question, possibleAnswer)}
-                        >
+                          className={`${isAnswerSubmitted ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                          >
                           <div 
-                            className={`answer-card group border ${selectedAnswer?.title === possibleAnswer.title ? 'border-primaryPurple' : 'border-[var(--card-background-color)]'} cursor-pointer flex gap-4 sm:gap-8 items-center p-3  sm:p-4 md:p-5 rounded-[12px] transition-all duration-300`}
+                            onClick={() => handleAnswerSelection(question, possibleAnswer)}
+                            className={`answer-card group border ${selectedAnswer?.title === possibleAnswer.title ? 'border-primaryPurple' : 'border-[var(--card-background-color)]'} flex gap-4 sm:gap-8 items-center p-3  sm:p-4 md:p-5 rounded-[12px] ${isAnswerSubmitted ? 'pointer-events-none' : 'cursor-pointer'} transition-all duration-300`}
                           >
                             <div 
                               className={`p-2 w-10 h-10 bg-[#F4F6FA] sm:w-[48px] sm:h-[48px] md:w-[56px] md:h-[56px] rounded-[6px] flex justify-center items-center ${selectedAnswer?.title === possibleAnswer.title && 'bg-primaryPurple'}`}
@@ -97,6 +104,7 @@ export default function Quiz() {
                           <button 
                             type="button"
                             className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300"
+                            onClick={() => goToNextQuestion()}
                           >
                             Next Question
                           </button>
@@ -104,7 +112,7 @@ export default function Quiz() {
                           <button 
                             type="button"
                             className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300"
-                            onClick={submitAnswer}
+                            onClick={() => submitAnswer(question)}
                           >
                             Submit Answer
                           </button>
