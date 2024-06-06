@@ -2,6 +2,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Await, useLocation } from "react-router-dom";
 import fetchQuiz from "../../lib/fetchQuiz";
 import Grid from "../../components/shared/Grid";
+import Results from "../../components/quiz/Results";
 
 type Answer = {
   tag: string,
@@ -20,6 +21,7 @@ export default function Quiz() {
   const [selectedAnswer, setSelectedAnswer] = useState<Answer | null>(null)
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState<boolean>(false)
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null)
+  const [showResults, setShowResults] = useState<boolean>(false)
   const location = useLocation()
   
   const path = location.pathname
@@ -53,6 +55,8 @@ export default function Quiz() {
   useEffect(() => {
     console.log("quizScore:::", quizScore)
   }, [quizScore])
+
+  if (showResults) return <Results quizScore={quizScore} />
   
   return (
     <Suspense fallback={<h1>loading...</h1>}>
@@ -115,6 +119,15 @@ export default function Quiz() {
                     </ul>
                     <div>
                       {
+                        quizData.length === questionStep+1 ?
+                          <button 
+                            type="button"
+                            className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300"
+                            onClick={() => setShowResults(true)}
+                          >
+                            Complete Quiz
+                          </button>
+                        :
                         isAnswerSubmitted ?
                           <button 
                             type="button"
