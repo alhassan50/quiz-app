@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type Category = {
-    title?: string,
-    icon?: string,
-    color?: string,
+    title: string,
+    icon: string,
+    color: string,
 }
 
 const initialState: Category | null = null;
@@ -14,16 +14,25 @@ const categorySlice = createSlice({
     reducers: {
         selectCategory: {
             prepare(category: Category | undefined) {
+                console.log("categorycategorycategorycategory:::", category)
                 if (category === undefined) return { payload: null };
                 return { payload: category };
             },
             reducer(state: Category | null, action: PayloadAction<Category | null>) {
-                state = { ...state, ...action.payload };
+                console.log("stateBEFOREstateBEFOREstateBEFOREstateBEFORE:::", action.payload)
+                console.log("state:::", state);
+                state = action.payload;
+                console.log("AFTERstate:::", state);
             }
         }
     }
 });
 
-export const getSelectedCategory = (state: { selectedCategory: Category | null }) => state.selectedCategory;
+
+export const getSelectedCategory = (state: { selectedCategor: Category | null }) => {
+    console.log("sdsdsd", state)
+    console.log("statestatestatestate:::", state.selectedCategor)
+    return state.selectedCategor
+};
 export const { selectCategory } = categorySlice.actions;
 export default categorySlice.reducer;

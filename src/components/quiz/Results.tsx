@@ -55,7 +55,7 @@ export default function Results({quizScore} : {quizScore: number}) {
             </div>
             <button 
                 type="button"
-                className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300"
+                className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300 text-white"
                 onClick={() => playAgain()}
             >
                 Play Again
