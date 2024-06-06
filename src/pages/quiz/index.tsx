@@ -105,8 +105,9 @@ export default function Quiz() {
 
                             <figure className="content-end">
                               {
+                                isAnswerSubmitted &&
                                 <img
-                                  src={`${possibleAnswer.title === question.correctAnswer.title ? '/assets/correct.svg' : '/assets/wrong.svg'}`}
+                                  src={possibleAnswer.title === question.correctAnswer.title ? '/assets/correct.svg' : (possibleAnswer.title === selectedAnswer?.title) && !isAnswerCorrect ? '/assets/wrong.svg' : ''}
                                   alt=""
                                 />
                               }
