@@ -1,11 +1,6 @@
-import categories from '../../public/data/categories.json'
+import getCategories from './getCategories'
 
-type Category = {
-    title: string,
-    icon: string,
-    color: string,
-}
-
-export default function getCategory(categoryTitle: string) {
-    return categories.find((category: Category) => categoryTitle.toLowerCase() ===  ('/'+category.title).toLowerCase())
+export default async function getCategory(categoryTitle: string) {
+    const categories = await getCategories()
+    return categories.find((category) => categoryTitle.toLowerCase() ===  ('/'+category.title).toLowerCase())
 }
