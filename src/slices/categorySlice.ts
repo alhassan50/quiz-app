@@ -1,16 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type Category = {
-    title: string,
-    icon: string,
-    color: string,
+    title?: string,
+    icon?: string,
+    color?: string,
 }
 
-const initialState: Category | null = {
-    title: "",
-    icon: "",
-    color: "",
-};
+const initialState: Category | null = null;
 
 const categorySlice = createSlice({
     name: 'selectedCategory',
@@ -22,7 +18,7 @@ const categorySlice = createSlice({
                 return { payload: category };
             },
             reducer(state: Category | null, action: PayloadAction<Category | null>) {
-                return action.payload;
+                state = { ...state, ...action.payload };
             }
         }
     }
