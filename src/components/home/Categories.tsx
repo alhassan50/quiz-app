@@ -33,6 +33,7 @@ export default function Categories() {
                                 >
                                     <Link to={`/${category.title}`} >
                                         <div className="flex gap-4 sm:gap-8 items-center p-3  sm:p-4 md:p-5 category-card rounded-[12px]">
+                                            {/* CSS INLINE BUG */}
                                             <figure 
                                                 className={`p-2 w-10 h-10 sm:w-[48px] sm:h-[48px] md:w-[56px] md:h-[56px] rounded-[6px]`}
                                                 style={{ backgroundColor: category.color }}
