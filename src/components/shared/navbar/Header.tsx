@@ -19,8 +19,10 @@ export default function Header() {
 
   //get quiz selected category
   const selectedCategory = getCategory(path)
-  dispatch(selectCategory(selectedCategory))
-  console.log(selectedCategory)
+
+  useEffect(() => {
+    dispatch(selectCategory(selectedCategory))
+  }, [dispatch, selectedCategory])
 
 
   //init theme from from local storage or operating system
