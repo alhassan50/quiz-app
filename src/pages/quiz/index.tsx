@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import fetchQuiz from "../../lib/fetchQuiz";
 import Grid from "../../components/shared/Grid";
 import Results from "../../components/quiz/Results";
+import Question from "../../components/quiz/Question";
 
 type Answer = {
   tag: string,
@@ -66,20 +67,11 @@ export default function Quiz() {
             <li key={question.question} >
               <Grid>
                 <section className="flex flex-col gap-6 lg:gap-[160px]">
-                  <div className="flex flex-col gap-4">
-                    <p className="text-sm sm:text-xl italic text-[#ABC1E1]">
-                      Question {questionStep + 1} of {quizData.length}
-                    </p>
-
-                    <h2 className="text-[20px] sm:text-[24px] md:text-[32px] lg:text-[36px] font-semibold">
-                      {question.question}
-                    </h2>
-                  </div>
-
-                  {/* progress tracker */}
-                  <div className="progress_tracker w-full p-1 rounded-[50px]">
-                    <div className={`h-2 bg-primaryPurple rounded-[50px] w-[${((index+1)/quizData.length)*100}%)]`}></div>
-                  </div>
+                  <Question 
+                    questionStep={questionStep}
+                    quizLength={quizData.length}
+                    question={question.question}
+                  />
                 </section>
 
                 <section>
