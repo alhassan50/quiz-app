@@ -117,23 +117,23 @@ export default function Quiz() {
                   </ul>
                   <div>
                     {
-                      quizData.length === questionStep+1 ?
-                        <button 
-                          type="button"
-                          className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300 text-white"
-                          onClick={() => setShowResults(true)}
-                        >
-                          Complete Quiz
-                        </button>
-                      :
                       isAnswerSubmitted ?
-                        <button 
-                          type="button"
-                          className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300 text-white"
-                          onClick={() => goToNextQuestion()}
-                        >
-                          Next Question
-                        </button>
+                        quizData.length === questionStep+1 ?
+                          <button 
+                            type="button"
+                            className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300 text-white"
+                            onClick={() => setShowResults(true)}
+                          >
+                            Complete Quiz
+                          </button>
+                        :
+                          <button 
+                            type="button"
+                            className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300 text-white"
+                            onClick={() => goToNextQuestion()}
+                          >
+                            Next Question
+                          </button>
                       :
                         <button 
                           type="button"
