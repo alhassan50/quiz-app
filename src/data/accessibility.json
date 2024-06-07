@@ -57,7 +57,7 @@
       { "tag": "C", "title": "2.5 : 1" },
       { "tag": "D", "title": "5 : 1" }
     ],
-    "correctAnswer": { "tag": "C", "title": "<nav>" }
+    "correctAnswer": { "tag": "A", "title": "4.5 : 1" }
   },
   {
     "question": "How can you improve keyboard navigation on a website?",
