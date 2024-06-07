@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What does HTML stand for?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "Home Tool Markup Language" },
+      { "tag": "B", "title": "Hyper Text Markup Language" },
+      { "tag": "C", "title": "Hyperlinks and Text Markup Language" },
+      { "tag": "D", "title": "None of the above" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "Hyper Text Markup Language" }
+  },
+  {
+    "question": "What is the correct HTML element for the largest heading?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<h6>" },
+      { "tag": "B", "title": "<h1>" },
+      { "tag": "C", "title": "<head>" },
+      { "tag": "D", "title": "<heading>" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "<h1>" }
+  },
+  {
+    "question": "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "alt" },
+      { "tag": "B", "title": "src" },
+      { "tag": "C", "title": "title" },
+      { "tag": "D", "title": "longdesc" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "alt" }
+  },
+  {
+    "question": "How can you create an ordered list?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<ul>" },
+      { "tag": "B", "title": "<ol>" },
+      { "tag": "C", "title": "<list>" },
+      { "tag": "D", "title": "<dl>" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "<ol>" }
+  },
+  {
+    "question": "What is the correct HTML element for inserting a line break?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<br>" },
+      { "tag": "B", "title": "<break>" },
+      { "tag": "C", "title": "<lb>" },
+      { "tag": "D", "title": "<hr>" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "<br>" }
+  },
+  {
+    "question": "Which HTML element is used to define important text?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<strong>" },
+      { "tag": "B", "title": "<i>" },
+      { "tag": "C", "title": "<b>" },
+      { "tag": "D", "title": "<important>" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "<strong>" }
+  },
+  {
+    "question": "Which HTML element is used to define emphasized text?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<i>" },
+      { "tag": "B", "title": "<em>" },
+      { "tag": "C", "title": "<italic>" },
+      { "tag": "D", "title": "<emphasized>" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "<em>" }
+  },
+  {
+    "question": "Which character is used to indicate an end tag?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "</>" },
+      { "tag": "B", "title": "<>" },
+      { "tag": "C", "title": "</" },
+      { "tag": "D", "title": "<!>" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "</>" }
+  },
+  {
+    "question": "How can you make a numbered list?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<ul>" },
+      { "tag": "B", "title": "<dl>" },
+      { "tag": "C", "title": "<ol>" },
+      { "tag": "D", "title": "<list>" }
+    ],
+    "correctAnswer": { "tag": "C", "title": "<ol>" }
+  },
+  {
+    "question": "How can you make a bulleted list?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<ul>" },
+      { "tag": "B", "title": "<ol>" },
+      { "tag": "C", "title": "<dl>" },
+      { "tag": "D", "title": "<list>" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "<ul>" }
+  }
+]

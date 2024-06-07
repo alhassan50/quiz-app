@@ -20,19 +20,22 @@ const categorySlice = createSlice({
             },
             reducer(state: Category | null, action: PayloadAction<Category | null>) {
                 console.log("stateBEFOREstateBEFOREstateBEFOREstateBEFORE:::", action.payload)
-                console.log("state:::", state);
+                //console.log("state:::::::::::", getSelectedCategory(state));
                 state = action.payload;
-                console.log("AFTERstate:::", state);
+                console.log("AFTERstate:::::::::::", state);
             }
         }
     }
 });
 
 
-export const getSelectedCategory = (state: { selectedCategor: Category | null }) => {
-    console.log("sdsdsd", state)
-    console.log("statestatestatestate:::", state.selectedCategor)
-    return state.selectedCategor
+export const getSelectedCategory = (state: { selectedCategory: Category | null }) => {
+    console.log("statestatestatestate:::", state.selectedCategory)
+    return state.selectedCategory
 };
+
+/* export const getSelectedCategory = (state) => {
+    console.log("statestatestatestate:::", state)
+}; */
 export const { selectCategory } = categorySlice.actions;
 export default categorySlice.reducer;

@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Inside which HTML element do we put the JavaScript?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<script>" },
+      { "tag": "B", "title": "<js>" },
+      { "tag": "C", "title": "<javascript>" },
+      { "tag": "D", "title": "<code>" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "<script>" }
+  },
+  {
+    "question": "What is the correct syntax for referring to an external script called 'xxx.js'?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<script src='xxx.js'>" },
+      { "tag": "B", "title": "<script href='xxx.js'>" },
+      { "tag": "C", "title": "<script name='xxx.js'>" },
+      { "tag": "D", "title": "<script file='xxx.js'>" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "<script src='xxx.js'>" }
+  },
+  {
+    "question": "How do you write 'Hello World' in an alert box?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "alert('Hello World');" },
+      { "tag": "B", "title": "msg('Hello World');" },
+      { "tag": "C", "title": "msgBox('Hello World');" },
+      { "tag": "D", "title": "alertBox('Hello World');" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "alert('Hello World');" }
+  },
+  {
+    "question": "How do you create a function in JavaScript?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "function myFunction()" },
+      { "tag": "B", "title": "function:myFunction()" },
+      { "tag": "C", "title": "function = myFunction()" },
+      { "tag": "D", "title": "createFunction myFunction()" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "function myFunction()" }
+  },
+  {
+    "question": "How do you call a function named 'myFunction'?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "myFunction()" },
+      { "tag": "B", "title": "call myFunction()" },
+      { "tag": "C", "title": "call function myFunction()" },
+      { "tag": "D", "title": "call myFunction;" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "myFunction()" }
+  },
+  {
+    "question": "How to write an IF statement in JavaScript?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "if (i == 5)" },
+      { "tag": "B", "title": "if i == 5 then" },
+      { "tag": "C", "title": "if i = 5 then" },
+      { "tag": "D", "title": "if i = 5" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "if (i == 5)" }
+  },
+  {
+    "question": "How does a WHILE loop start?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "while (i <= 10)" },
+      { "tag": "B", "title": "while (i <= 10; i++)" },
+      { "tag": "C", "title": "while i = 1 to 10" },
+      { "tag": "D", "title": "while (i <= 10) {i++}" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "while (i <= 10)" }
+  },
+  {
+    "question": "How does a FOR loop start?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "for (i = 0; i <= 5; i++)" },
+      { "tag": "B", "title": "for (i <= 5; i++)" },
+      { "tag": "C", "title": "for i = 1 to 5" },
+      { "tag": "D", "title": "for (i = 0; i <= 5)" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "for (i = 0; i <= 5; i++)" }
+  },
+  {
+    "question": "How can you add a comment in JavaScript?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "//This is a comment" },
+      { "tag": "B", "title": "<!--This is a comment-->" },
+      { "tag": "C", "title": "'This is a comment" },
+      { "tag": "D", "title": "*This is a comment*" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "//This is a comment" }
+  },
+  {
+    "question": "What is the correct way to write a JavaScript array?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "var colors = ['red', 'green', 'blue']" },
+      { "tag": "B", "title": "var colors = (1:'red', 2:'green', 3:'blue')" },
+      { "tag": "C", "title": "var colors = 'red', 'green', 'blue'" },
+      { "tag": "D", "title": "var colors = {1:'red', 2:'green', 3:'blue'}" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "var colors = ['red', 'green', 'blue']" }
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is web accessibility?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "Creating web pages that are attractive" },
+      { "tag": "B", "title": "Designing websites that can be used by people with disabilities" },
+      { "tag": "C", "title": "Optimizing websites for search engines" },
+      { "tag": "D", "title": "Ensuring websites load quickly" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "Designing websites that can be used by people with disabilities" }
+  },
+  {
+    "question": "What does WCAG stand for?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "Web Content Accessibility Guidelines" },
+      { "tag": "B", "title": "World Content Accessibility Guide" },
+      { "tag": "C", "title": "Web Content Access Guide" },
+      { "tag": "D", "title": "World Content and Accessibility Guidelines" }
+    ],
+    "correctAnswer": { "tag": "A", "title": "Web Content Accessibility Guidelines" }
+  },
+  {
+    "question": "Which HTML attribute is used to provide alternative text for images?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "src" },
+      { "tag": "B", "title": "longdesc" },
+      { "tag": "C", "title": "alt" },
+      { "tag": "D", "title": "title" }
+    ],
+    "correctAnswer": { "tag": "C", "title": "alt" }
+  },
+  {
+    "question": "What is a common tool used for screen readers?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "Mouse" },
+      { "tag": "B", "title": "JAWS" },
+      { "tag": "C", "title": "Trackpad" },
+      { "tag": "D", "title": "Monitor" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "JAWS" }
+  },
+  {
+    "question": "What is the purpose of ARIA (Accessible Rich Internet Applications)?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "To improve website performance" },
+      { "tag": "B", "title": "To make web content and web applications more accessible to people with disabilities" },
+      { "tag": "C", "title": "To enhance website security" },
+      { "tag": "D", "title": "To increase web traffic" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "To make web content and web applications more accessible to people with disabilities" }
+  },
+  {
+    "question": "Which HTML element is used to define navigation links?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "<header>" },
+      { "tag": "B", "title": "<footer>" },
+      { "tag": "C", "title": "<nav>" },
+      { "tag": "D", "title": "<section>" }
+    ],
+    "correctAnswer": { "tag": "C", "title": "<nav>" }
+  },
+  {
+    "question": "How can you improve keyboard navigation on a website?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "Use large images" },
+      { "tag": "B", "title": "Use tabindex attribute" },
+      { "tag": "C", "title": "Use small text" },
+      { "tag": "D", "title": "Use complex forms" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "Use tabindex attribute" }
+  },
+  {
+    "question": "Which CSS property can help improve accessibility by controlling the visibility of an element?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "color" },
+      { "tag": "B", "title": "visibility" },
+      { "tag": "C", "title": "font-size" },
+      { "tag": "D", "title": "position" }
+    ],
+    "correctAnswer": { "tag": "B", "title": "visibility" }
+  },
+  {
+    "question": "What is the purpose of a 'skip to content' link?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "To provide a link to external resources" },
+      { "tag": "B", "title": "To add decorative elements to a webpage" },
+      { "tag": "C", "title": "To enhance the website's SEO" },
+      { "tag": "D", "title": "To allow users to bypass navigation and go straight to the main content" }
+    ],
+    "correctAnswer": { "tag": "D", "title": "To allow users to bypass navigation and go straight to the main content" }
+  },
+  {
+    "question": "Which ARIA role is used to define a banner landmark?",
+    "possibleAnswers": [
+      { "tag": "A", "title": "main" },
+      { "tag": "B", "title": "navigation" },
+      { "tag": "C", "title": "contentinfo" },
+      { "tag": "D", "title": "banner" }
+    ],
+    "correctAnswer": { "tag": "D", "title": "banner" }
+  }
+]
