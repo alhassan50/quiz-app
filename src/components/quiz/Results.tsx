@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { getSelectedCategory } from "../../slices/categorySlice";
 
 
-export default function Results({quizScore} : {quizScore: number}) {
+export default function Results({quizScore, quizLength} : {quizScore: number, quizLength: number}) {
   const navigate = useNavigate()
   const selectedCategory = useSelector(getSelectedCategory)
   console.log("selectedCategory:::::::", selectedCategory)
@@ -51,7 +51,7 @@ export default function Results({quizScore} : {quizScore: number}) {
                 {quizScore}
                 </h1>
 
-                <p className="text-lg sm:text-xl md:text-2xl text-[#ABC1E1]">out of 10</p>
+                <p className="text-center text-lg sm:text-xl md:text-2xl text-[#ABC1E1]">out of {quizLength}</p>
             </div>
             <button 
                 type="button"

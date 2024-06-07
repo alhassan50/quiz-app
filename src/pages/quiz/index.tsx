@@ -16,16 +16,17 @@ type Question = {
 }
 
 export default function Quiz() {
+  const location = useLocation()
+  const path = location.pathname
+
+  const quizData = fetchQuiz(path)
+
   const [questionStep, setQuestionStep] = useState<number>(0)
   const [quizScore, setQuizScore] = useState<number>(0)
   const [selectedAnswer, setSelectedAnswer] = useState<Answer | null>(null)
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState<boolean>(false)
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null)
   const [showResults, setShowResults] = useState<boolean>(false)
-  const location = useLocation()
-  
-  const path = location.pathname
-  const quizData = fetchQuiz(path)
 
   const increaseQuizScore = () => {
     setQuizScore(prevScore => prevScore + 1)
@@ -56,7 +57,7 @@ export default function Quiz() {
     console.log("quizScore:::", quizScore)
   }, [quizScore])
 
-  if (showResults) return <Results quizScore={quizScore} />
+  if (showResults) return <Results quizScore={quizScore} quizLength={quizData.length} />
   
   return (
         <ul>
