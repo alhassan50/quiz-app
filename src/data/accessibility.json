@@ -50,12 +50,12 @@
     "correctAnswer": { "tag": "B", "title": "To make web content and web applications more accessible to people with disabilities" }
   },
   {
-    "question": "Which HTML element is used to define navigation links?",
+    "question": "Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?",
     "possibleAnswers": [
-      { "tag": "A", "title": "<header>" },
-      { "tag": "B", "title": "<footer>" },
-      { "tag": "C", "title": "<nav>" },
-      { "tag": "D", "title": "<section>" }
+      { "tag": "A", "title": "4.5 : 1" },
+      { "tag": "B", "title": "3 : 1 " },
+      { "tag": "C", "title": "2.5 : 1" },
+      { "tag": "D", "title": "5 : 1" }
     ],
     "correctAnswer": { "tag": "C", "title": "<nav>" }
   },

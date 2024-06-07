@@ -29,23 +29,37 @@ export default function Quiz() {
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState<boolean>(false)
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null)
   const [showResults, setShowResults] = useState<boolean>(false)
+  const [showSubmissionErrorMsg, setShowSubmissionErrorMsg] = useState<boolean>(false)
 
   const increaseQuizScore = () => {
     setQuizScore(prevScore => prevScore + 1)
   }
 
   const handleAnswerSelection = (selectedAnswer: Answer) => {
+    hideSubmissionErrorMsg()
     console.log(selectedAnswer)
     setSelectedAnswer(selectedAnswer)
   }
   
+  const hideSubmissionErrorMsg = () => {
+    setShowSubmissionErrorMsg(false)
+  }
+  
+  const displaySubmissionErrorMsg = () => {
+    setShowSubmissionErrorMsg(true)
+  }
+  
   const submitAnswer = (question: Question) => {
-    const correctAnswer = question.correctAnswer.title
-    if (correctAnswer === selectedAnswer?.title)  {
-      increaseQuizScore()
-      setIsAnswerCorrect(true)
-    } else setIsAnswerCorrect(false)
-    setIsAnswerSubmitted(true)
+    if (selectedAnswer) {
+      const correctAnswer = question.correctAnswer.title
+      if (correctAnswer === selectedAnswer?.title)  {
+        increaseQuizScore()
+        setIsAnswerCorrect(true)
+      } else setIsAnswerCorrect(false)
+      setIsAnswerSubmitted(true)
+    } else {
+      displaySubmissionErrorMsg()
+    }
   }
   
   const goToNextQuestion = () => {
@@ -53,6 +67,7 @@ export default function Quiz() {
     setSelectedAnswer(null)
     setIsAnswerSubmitted(false)
     setIsAnswerCorrect(null)
+    hideSubmissionErrorMsg()
   }
 
   useEffect(() => {
@@ -81,7 +96,7 @@ export default function Quiz() {
                       <li 
                         key={possibleAnswer.title} 
                         className={`${isAnswerSubmitted ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-                        >
+                      >
                         <AnswerCard 
                           possibleAnswer={possibleAnswer}
                           selectedAnswer={selectedAnswer}
@@ -89,12 +104,12 @@ export default function Quiz() {
                           isAnswerSubmitted={isAnswerSubmitted}
                           isAnswerCorrect={isAnswerCorrect}
                           handleAnswerSelection={handleAnswerSelection}
-
                         />
                       </li>
                     ))}
                   </ul>
-                  <div>
+
+                  <div className="grid gap-3 sm:gap-5 md:gap-8">
                     {
                       isAnswerSubmitted ?
                         quizData.length === questionStep+1 ?
@@ -121,6 +136,18 @@ export default function Quiz() {
                         >
                           Submit Answer
                         </button>
+                    }
+                    {
+                      showSubmissionErrorMsg &&
+                      <div className="flex gap-2 justify-center items-center">
+                        <figure>
+                        <img
+                          src='/assets/wrong.svg'
+                          alt=""
+                        />
+                        </figure>
+                        <p className="text-[#EE5454] text-lg sm:text-xl lg:text-2xl">Please select an answer</p>
+                      </div>
                     }
                   </div>
                 </section>
