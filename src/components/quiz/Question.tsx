@@ -1,3 +1,4 @@
+//components
 import QuizProgressTracker from "./QuizProgressTracker"
 
 function Question({questionStep, quizLength, question}: {questionStep: number, quizLength:  number, question: string}) {

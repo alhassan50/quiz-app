@@ -12,6 +12,8 @@ import Quiz from './pages/quiz'
 //layouts
 import RootLayout from "./layouts/RootLayout"
 
+
+//setup routes
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />}/>

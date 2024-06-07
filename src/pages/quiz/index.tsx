@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+
+//utils
 import fetchQuiz from "../../lib/fetchQuiz";
+
+//components
 import Grid from "../../components/shared/Grid";
 import Results from "../../components/quiz/Results";
 import Question from "../../components/quiz/Question";
@@ -52,16 +56,18 @@ export default function Quiz() {
   const submitAnswer = (question: Question) => {
     if (selectedAnswer) {
       const correctAnswer = question.correctAnswer.title
+
       if (correctAnswer === selectedAnswer?.title)  {
         increaseQuizScore()
         setIsAnswerCorrect(true)
       } else setIsAnswerCorrect(false)
+
       setIsAnswerSubmitted(true)
-    } else {
-      displaySubmissionErrorMsg()
-    }
+
+    } else displaySubmissionErrorMsg()
   }
   
+  //reset hooks
   const goToNextQuestion = () => {
     setQuestionStep(prevStep => prevStep + 1)
     setSelectedAnswer(null)
