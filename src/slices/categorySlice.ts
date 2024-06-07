@@ -6,7 +6,11 @@ type Category = {
     color: string,
 }
 
-const initialState: Category | null = null;
+const initialState: Category = {
+    title: "",
+    icon: "",
+    color: "",
+};
 
 const categorySlice = createSlice({
     name: 'selectedCategory',
@@ -14,28 +18,19 @@ const categorySlice = createSlice({
     reducers: {
         selectCategory: {
             prepare(category: Category | undefined) {
-                console.log("categorycategorycategorycategory:::", category)
-                if (category === undefined) return { payload: null };
+                if (category === undefined) return { payload: initialState };
                 return { payload: category };
             },
-            reducer(state: Category | null, action: PayloadAction<Category | null>) {
-                console.log("stateBEFOREstateBEFOREstateBEFOREstateBEFORE:::", action.payload)
-                //console.log("state:::::::::::", getSelectedCategory(state));
-                state = action.payload;
-                console.log("AFTERstate:::::::::::", state);
-            }
+            reducer(state, action: PayloadAction<Category>) {
+                state.title = action.payload.title
+                state.icon = action.payload.icon
+                state.color = action.payload.color
+            },
         }
     }
 });
 
 
-export const getSelectedCategory = (state: { selectedCategory: Category | null }) => {
-    console.log("statestatestatestate:::", state.selectedCategory)
-    return state.selectedCategory
-};
-
-/* export const getSelectedCategory = (state) => {
-    console.log("statestatestatestate:::", state)
-}; */
+export const getSelectedCategory = (state: { selectedCategory: Category }) => state.selectedCategory
 export const { selectCategory } = categorySlice.actions;
 export default categorySlice.reducer;
