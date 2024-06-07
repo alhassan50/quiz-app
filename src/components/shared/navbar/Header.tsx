@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { useLocation } from "react-router-dom";
 
 //components
 import ColorTheme from "./ColorTheme";
 
 //utils
-import getSystemTheme from "../../../lib/getSystenTheme";
 import getCategory from "../../../lib/getCategory";
 import { useDispatch } from "react-redux";
 import { selectCategory } from "../../../slices/categorySlice";
@@ -23,43 +22,6 @@ export default function Header() {
   useEffect(() => {
     dispatch(selectCategory(selectedCategory))
   }, [dispatch, selectedCategory])
-
-
-  //init theme from from local storage or operating system
-  const [theme, setTheme] = useState(() => {
-      const storedTheme = localStorage.getItem('quizAppTheme');
-      return storedTheme ? storedTheme : getSystemTheme();
-  })
-
-  //stores website preffered theme in local storage
-  const toggleTheme = () => {
-      setTheme(prevTheme => {
-          const newTheme = prevTheme === 'light' ? 'dark' : 'light'
-          localStorage.setItem('quizAppTheme', newTheme);
-          return newTheme
-      })
-  }
-
-  //listen for change in operating system theme
-  useEffect(() => {
-      const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-        if (!localStorage.getItem('theme')) {
-          setTheme(e.matches ? 'dark' : 'light');
-        }
-      };
-  
-      const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      darkMediaQuery.addEventListener('change', handleSystemThemeChange);
-  
-      return () => {
-        darkMediaQuery.removeEventListener('change', handleSystemThemeChange);
-      };
-  }, []);
-  
-  //adds preffered theme as attribute to document
-  useEffect(() => {
-      document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
 
   return (
     <header className="py-[26px]">
@@ -85,10 +47,7 @@ export default function Header() {
               }
             </figure>
 
-            <ColorTheme 
-                theme={theme}
-                toggleTheme={toggleTheme}
-            />
+            <ColorTheme />
         </div>
     </header>
   )
