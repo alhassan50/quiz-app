@@ -34,7 +34,7 @@ export default function Categories() {
                                         className="w-full h-full"
                                     />
                                 </figure>
-                                <h3 className="text-lg sm:text-[24px] md:text-[28px] font-medium">
+                                <h3 className="">
                                     {category.title}
                                 </h3>
                             </div>

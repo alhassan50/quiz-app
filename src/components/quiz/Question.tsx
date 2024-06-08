@@ -5,7 +5,7 @@ function Question({questionStep, quizLength, question}: {questionStep: number, q
   return (
     <div className="flex flex-col gap-4 lg:gap-[80px]">
         <div className="flex flex-col gap-4">
-          <p className="text-sm sm:text-xl italic text-[#ABC1E1]">
+          <p className="text-sm sm:text-xl italic text-lightNavy">
               Question {questionStep + 1} of {quizLength}
           </p>
 

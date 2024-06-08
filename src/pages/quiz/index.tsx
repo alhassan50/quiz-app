@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -142,7 +142,7 @@ export default function Quiz() {
                         quizData.length === questionStep+1 ?
                           <button 
                             type="button"
-                            className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300 text-white"
+                            className="btn-primary"
                             onClick={() => setShowResults(true)}
                           >
                             Complete Quiz
@@ -150,7 +150,7 @@ export default function Quiz() {
                         :
                           <button 
                             type="button"
-                            className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300 text-white"
+                            className="btn-primary"
                             onClick={() => goToNextQuestion()}
                           >
                             Next Question
@@ -158,7 +158,7 @@ export default function Quiz() {
                       :
                         <button 
                           type="button"
-                          className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300 text-white"
+                          className="btn-primary"
                           onClick={() => submitAnswer(question)}
                         >
                           Submit Answer
@@ -173,7 +173,7 @@ export default function Quiz() {
                           alt=""
                         />
                         </figure>
-                        <p className="text-[#EE5454] text-lg sm:text-xl lg:text-2xl">Please select an answer</p>
+                        <p className="text-red text-lg sm:text-xl lg:text-2xl">Please select an answer</p>
                       </div>
                     }
                   </div>

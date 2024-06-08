@@ -41,5 +41,18 @@ body {
     color: var(--text-color);
 }
 
-@layer base {}
+@layer base {
+
+    h1 {
+        @apply text-[40px] sm:text-[52px] md:text-[58px] lg:text-[64px] font-bold
+    }
+
+    h3 {
+        @apply text-lg sm:text-[24px] md:text-[28px] font-medium
+    }
+
+    .btn-primary {
+        @apply p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-primaryPurpleLight transition-all duration-300 text-white
+    }
+}
 

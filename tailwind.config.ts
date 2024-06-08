@@ -8,7 +8,11 @@ export default {
     extend: {
       colors: {
         primaryPurple: '#A729F5',
+        primaryPurpleLight: '#D394FA',
         darkNavy: "#313E51",
+        lightNavy: "#ABC1E1",
+        green: '#26D782',
+        red: '#EE5454',
         cardBg: 'var(--card-background-color)',
       },
       backgroundImage: {

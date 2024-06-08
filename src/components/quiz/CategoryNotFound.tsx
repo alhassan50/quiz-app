@@ -7,7 +7,7 @@ export default function CategoryNotFound() {
     <div className="flex justify-center items-center h-full">
         <div>
             <div className="bg-cardBg p-10 sm:p-16 md:p-20 rounded-[12px] text-center">
-                <h1 className="text-[40px] sm:text-[52px] md:text-[58px] lg:text-[64px] font-bold">
+                <h1 className="">
                     Ooops :(
                 </h1>
 
@@ -18,7 +18,7 @@ export default function CategoryNotFound() {
             <Link to={'/'}>
                 <button
                     type="button"
-                    className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300 text-white"
+                    className="btn-primary"
                 >
                     Go Home
                 </button>

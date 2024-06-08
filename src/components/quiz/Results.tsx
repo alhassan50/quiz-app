@@ -52,7 +52,7 @@ export default function Results({quizScore, quizLength} : {quizScore: number, qu
         <Grid>
             <section className="flex flex-col gap-6 lg:gap-[160px]">
             <div className="flex flex-col gap-4">
-                <h1 className="text-[40px] sm:text-[52px] md:text-[58px] lg:text-[64px] font-bold">
+                <h1 className="">
                 <span className="font-light">Quiz completed </span>
                 <br />
                 You scored...
@@ -76,7 +76,7 @@ export default function Results({quizScore, quizLength} : {quizScore: number, qu
                                 className="w-full h-full"
                             />
                         </figure>
-                        <h3 className="text-lg sm:text-[24px] md:text-[28px] font-medium">
+                        <h3 className="">
                             {selectedCategory.title}
                         </h3>
                     </div>
@@ -86,11 +86,11 @@ export default function Results({quizScore, quizLength} : {quizScore: number, qu
                     {quizScore}
                     </h1>
 
-                    <p className="text-center text-lg sm:text-xl md:text-2xl text-[#ABC1E1]">out of {quizLength}</p>
+                    <p className="text-center text-lg sm:text-xl md:text-2xl text-lightNavy">out of {quizLength}</p>
                 </div>
                 <button 
                     type="button"
-                    className="p-3 sm:p-4 md:p-6 lg:p-[32px] mt-[32px] font-medium bg-primaryPurple w-full rounded-[12px] text-lg sm:text-[24px] hover:bg-[#D394FA] transition-all duration-300 text-white"
+                    className="btn-primary"
                     onClick={() => playAgain()}
                 >
                     Play Again

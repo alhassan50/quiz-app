@@ -40,7 +40,7 @@ export default function Header() {
                             className="w-full h-full"
                         />
                     </figure>
-                    <h3 className="text-lg sm:text-[24px] md:text-[28px] font-medium">
+                    <h3 className="">
                         {selectedCategory.title}
                     </h3>
                 </div>
