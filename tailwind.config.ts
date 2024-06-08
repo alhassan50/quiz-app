@@ -15,9 +15,7 @@ export default {
         red: '#EE5454',
         cardBg: 'var(--card-background-color)',
       },
-      backgroundImage: {
-        ellipse: "url('/assets/ellipse.svg')"
-      }
+      backgroundImage: {}
     },
   },
   plugins: [],

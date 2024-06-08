@@ -1,9 +1,3 @@
-type Category = {
-    title: string;
-    icon: string;
-    color: string;
-}
-
 export default function Logo({selectedCategory}: {selectedCategory: Category}) {
   return (
     <div className="flex gap-4 sm:gap-8 items-center">

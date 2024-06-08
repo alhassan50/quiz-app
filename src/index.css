@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-    --background-color: #EDF1F9;
+    --background-color: #F4F6FA; 
     --card-background-color: #fff;
     --progress-tracker-background-color: #fff;
     --text-color: #313E51;
@@ -18,7 +18,7 @@
     --background-color: #313E51;
     --card-background-color: #3B4D66;
     --progress-tracker-background-color: #3B4D66;
-    --text-color: #EDF1F9;
+    --text-color: #F4F6FA;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -33,7 +33,6 @@ body {
 .category-card, .answer-card {
     background-color: var(--card-background-color);
     color: var(--text-color);
-    /* border: 2px solid var(--card-background-color) */
 }
 
 .progress_tracker {
@@ -42,6 +41,33 @@ body {
 }
 
 @layer base {
+    .bg-ellipseMobile {
+        background-image: url('/assets/ellipse-mobile-light.svg');
+    }
+    
+    .bg-ellipseTablet {
+        background-image: url('/assets/ellipse-tablet-light.svg');
+    }
+    
+    .bg-doubleEllipse {
+        background-image: url('/assets/double-ell-light.svg');
+    }
+
+    :root[data-theme='dark'] .bg-ellipseMobile {
+        background-image: url('/assets/dark-ellipse-mobile.svg');
+    }
+    
+    :root[data-theme='dark'] .bg-ellipseTablet {
+        background-image: url('/assets/dark-ellipse-tablet.svg');
+    }
+    
+    :root[data-theme='dark'] .bg-doubleEllipse {
+        background-image: url('/assets/dark-double-ell.svg');
+    }
+
+    body {
+        @apply bg-ellipseMobile bg-fixed lg:bg-doubleEllipse sm:bg-ellipseTablet bg-no-repeat min-h-screen bg-cover bg-center
+    }
 
     h1 {
         @apply text-[40px] sm:text-[52px] md:text-[58px] lg:text-[64px] font-bold
