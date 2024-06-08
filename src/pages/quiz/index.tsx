@@ -11,11 +11,13 @@ import Question from "../../components/quiz/Question";
 import AnswerCard from "../../components/quiz/AnswerCard";
 import CategoryNotFound from "../../components/quiz/CategoryNotFound";
 
+//tye
 type Answer = {
   tag: string,
   title: string
 }
 
+//type
 type Question = {
   question: string,
   possibleAnswers: Answer[],
@@ -26,9 +28,10 @@ export default function Quiz() {
   const location = useLocation()
   const path = location.pathname
 
+  //gets quiz data from selected category
   const quizData = fetchQuiz(path)
 
-  
+  //state hooks
   const [questionStep, setQuestionStep] = useState<number>(0)
   const [quizScore, setQuizScore] = useState<number>(0)
   const [selectedAnswer, setSelectedAnswer] = useState<Answer | null>(null)
@@ -40,10 +43,10 @@ export default function Quiz() {
   
   const increaseQuizScore = () => {
     setQuizScore(prevScore => prevScore + 1)
-    }
+  }
     
-    const handleAnswerSelection = (selectedAnswer: Answer) => {
-      hideSubmissionErrorMsg()
+  const handleAnswerSelection = (selectedAnswer: Answer) => {
+    hideSubmissionErrorMsg()
     console.log(selectedAnswer)
     setSelectedAnswer(selectedAnswer)
   }
@@ -59,31 +62,38 @@ export default function Quiz() {
   const submitAnswer = (question: Question) => {
     if (selectedAnswer) {
       const correctAnswer = question.correctAnswer.title
-      
+        
       if (correctAnswer === selectedAnswer?.title)  {
         increaseQuizScore()
         setIsAnswerCorrect(true)
-        } else setIsAnswerCorrect(false)
+      } else {
+        setIsAnswerCorrect(false)
+      }
         
-        setIsAnswerSubmitted(true)
-        
-        } else displaySubmissionErrorMsg()
-        }
-        
-        //reset hooks
-        const goToNextQuestion = () => {
-          setQuestionStep(prevStep => prevStep + 1)
-          setSelectedAnswer(null)
-          setIsAnswerSubmitted(false)
-          setIsAnswerCorrect(null)
-    hideSubmissionErrorMsg()
+      setIsAnswerSubmitted(true)
+      
+    } else {
+      displaySubmissionErrorMsg()
     }
+  }
+        
+  //reset hooks
+  const goToNextQuestion = () => {
+    setQuestionStep(prevStep => prevStep + 1)
+    setSelectedAnswer(null)
+    setIsAnswerSubmitted(false)
+    setIsAnswerCorrect(null)
+    hideSubmissionErrorMsg()
+  }
 
   useEffect(() => {
     console.log("quizScore:::", quizScore)
-    }, [quizScore])
+  }, [quizScore])
     
+  //renderes 404 page when category is not found
   if (quizData.length === 0) return <CategoryNotFound />
+
+  //display results on request
   if (showResults) return <Results quizScore={quizScore} quizLength={quizData.length} />
   
   return (

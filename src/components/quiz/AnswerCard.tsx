@@ -1,14 +1,17 @@
+//type 
 type Answer = {
   tag: string,
   title: string
 }
 
+//type 
 type Question = {
   question: string,
   possibleAnswers: Answer[],
   correctAnswer: Answer
 }
 
+//type 
 type Props = {
   question: Question,
   possibleAnswer: Answer, 
@@ -24,7 +27,8 @@ export default function AnswerCard({
   selectedAnswer, 
   isAnswerCorrect, 
   question,
-  handleAnswerSelection}: Props) {
+  handleAnswerSelection
+}: Props) {
   return (
     <div 
         onClick={() => handleAnswerSelection(possibleAnswer)}
