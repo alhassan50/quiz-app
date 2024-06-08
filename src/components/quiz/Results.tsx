@@ -13,8 +13,6 @@ export default function Results({quizScore, quizLength} : {quizScore: number, qu
     })
   const navigate = useNavigate()
   const selectedCategory = useSelector(getSelectedCategory)
-  console.log("selectedCategory:::::::", selectedCategory)
-
   
   useEffect(()=>{
     const handleWindowResize = () => {

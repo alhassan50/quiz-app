@@ -52,7 +52,6 @@ export default function Quiz() {
     
   const handleAnswerSelection = (selectedAnswer: Answer) => {
     hideSubmissionErrorMsg()
-    console.log(selectedAnswer)
     setSelectedAnswer(selectedAnswer)
   }
   
@@ -90,10 +89,6 @@ export default function Quiz() {
     setIsAnswerCorrect(null)
     hideSubmissionErrorMsg()
   }
-
-  useEffect(() => {
-    console.log("quizScore:::", quizScore)
-  }, [quizScore])
     
   //renderes 404 page when category is not found
   if (quizData.length === 0) return <CategoryNotFound />

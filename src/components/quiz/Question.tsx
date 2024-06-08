@@ -1,10 +1,7 @@
 //components
 import QuizProgressTracker from "./QuizProgressTracker"
 
-function Question({questionStep, quizLength, question}: {questionStep: number, quizLength:  number, question: string}) {
-  
-  console.log(((questionStep+1)/quizLength)*100);
-  
+function Question({questionStep, quizLength, question}: {questionStep: number, quizLength:  number, question: string}) {  
   return (
     <div className="flex flex-col gap-4 lg:gap-[80px]">
         <div className="flex flex-col gap-4">
