@@ -3,13 +3,6 @@ import { Link } from "react-router-dom"
 //utils
 import getCategories from "../../lib/getCategories"
 
-//type
-interface Category {
-    title: string,
-    icon: string,
-    color: string,
-}
-
 export default function Categories() {
     const categories = getCategories()
 

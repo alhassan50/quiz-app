@@ -16,19 +16,6 @@ import CategoryNotFound from "../../components/quiz/CategoryNotFound";
 import { AnimatePresence } from "framer-motion";
 import { transition, variants } from "../../lib/variants";
 
-//tye
-type Answer = {
-  tag: string,
-  title: string
-}
-
-//type
-type Question = {
-  question: string,
-  possibleAnswers: Answer[],
-  correctAnswer: Answer
-}
-
 export default function Quiz() {
   const location = useLocation()
   const path = location.pathname

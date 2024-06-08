@@ -1,17 +1,4 @@
 //type 
-type Answer = {
-  tag: string,
-  title: string
-}
-
-//type 
-type Question = {
-  question: string,
-  possibleAnswers: Answer[],
-  correctAnswer: Answer
-}
-
-//type 
 type Props = {
   question: Question,
   possibleAnswer: Answer, 

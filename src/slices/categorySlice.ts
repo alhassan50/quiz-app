@@ -1,11 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type Category = {
-    title: string,
-    icon: string,
-    color: string,
-}
-
 const initialState: Category = {
     title: "",
     icon: "",
