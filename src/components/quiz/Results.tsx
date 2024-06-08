@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getSelectedCategory } from "../../slices/categorySlice";
 import Confetti from "react-confetti";
 import { useEffect, useState } from "react";
+import Logo from "../shared/navbar/Logo";
 
 
 export default function Results({quizScore, quizLength} : {quizScore: number, quizLength: number}) {
@@ -63,24 +64,10 @@ export default function Results({quizScore, quizLength} : {quizScore: number, qu
             <section>
                 <div className="bg-cardBg p-12 rounded-3xl flex flex-col justify-center items-center">
 
-                {
-                    selectedCategory && 
-                    <div className="flex gap-4 sm:gap-8 items-center">
-                        <figure 
-                            className={`p-2 w-10 h-10 sm:w-[48px] sm:h-[48px] md:w-[56px] md:h-[56px] rounded-[6px]`}
-                            style={{ backgroundColor: selectedCategory.color }}
-                        >
-                            <img 
-                                src={selectedCategory.icon}
-                                alt={selectedCategory.title}
-                                className="w-full h-full"
-                            />
-                        </figure>
-                        <h3 className="">
-                            {selectedCategory.title}
-                        </h3>
-                    </div>
-                }
+                    {
+                        selectedCategory && 
+                        <Logo selectedCategory={selectedCategory} />
+                    }
 
                     <h1 className="text-[88px] sm:text-[100px] md:text-[120px] lg:text-[144px] font-bold">
                     {quizScore}
