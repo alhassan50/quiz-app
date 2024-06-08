@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 //utils
 import fetchQuiz from "../../lib/fetchQuiz";
@@ -10,6 +11,10 @@ import Results from "../../components/quiz/Results";
 import Question from "../../components/quiz/Question";
 import AnswerCard from "../../components/quiz/AnswerCard";
 import CategoryNotFound from "../../components/quiz/CategoryNotFound";
+
+//variant
+import { AnimatePresence } from "framer-motion";
+import { transition, variants } from "../../lib/variants";
 
 //tye
 type Answer = {
@@ -111,23 +116,30 @@ export default function Quiz() {
                 </section>
 
                 <section>
-                  <ul className="grid gap-3 sm:gap-4 md:gap-6">
-                    {question.possibleAnswers.map(possibleAnswer => (
-                      <li 
-                        key={possibleAnswer.title} 
-                        className={`${isAnswerSubmitted ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-                      >
-                        <AnswerCard 
-                          possibleAnswer={possibleAnswer}
-                          selectedAnswer={selectedAnswer}
-                          question={question}
-                          isAnswerSubmitted={isAnswerSubmitted}
-                          isAnswerCorrect={isAnswerCorrect}
-                          handleAnswerSelection={handleAnswerSelection}
-                        />
-                      </li>
-                    ))}
-                  </ul>
+                  <AnimatePresence>
+                    <ul className="grid gap-3 sm:gap-4 md:gap-6">
+                      {question.possibleAnswers.map(possibleAnswer => (
+                        <motion.li 
+                          key={possibleAnswer.title} 
+                          className={`${isAnswerSubmitted ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                          variants={variants}
+                          initial="enter"
+                          animate="center"
+                          exit="exit"
+                          transition={transition}
+                        >
+                          <AnswerCard 
+                            possibleAnswer={possibleAnswer}
+                            selectedAnswer={selectedAnswer}
+                            question={question}
+                            isAnswerSubmitted={isAnswerSubmitted}
+                            isAnswerCorrect={isAnswerCorrect}
+                            handleAnswerSelection={handleAnswerSelection}
+                          />
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </AnimatePresence>
 
                   <div className="grid gap-3 sm:gap-5 md:gap-8">
                     {
