@@ -8,9 +8,8 @@ import Logo from "../shared/navbar/Logo";
 
 
 export default function Results({quizScore, quizLength} : {quizScore: number, quizLength: number}) {
-    const [windowSize, setWindowSize] = useState<{width: number; height: number;}>({
-        width: window.innerWidth,
-        height: window.innerHeight
+    const [windowSize, setWindowSize] = useState<{width: number | undefined}>({
+        width: window.innerWidth - 20,
     })
   const navigate = useNavigate()
   const selectedCategory = useSelector(getSelectedCategory)
@@ -20,8 +19,7 @@ export default function Results({quizScore, quizLength} : {quizScore: number, qu
         setWindowSize(prevDimensions => {
             return {
                 ...prevDimensions,
-                width: window.innerWidth,
-                height: window.innerHeight
+                width: window.innerWidth - 20,
             }
         })
     }
@@ -47,7 +45,6 @@ export default function Results({quizScore, quizLength} : {quizScore: number, qu
             quizScore >= 6 &&
             <Confetti 
                 width={windowSize.width}
-                height={windowSize.height}
             />
         }
         <Grid>
